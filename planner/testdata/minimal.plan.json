@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1",
+  "environment": "skeleton",
+  "backend": "container",
+  "networks": [
+    {
+      "name": "default",
+      "subnet": "172.30.0.0/24"
+    }
+  ],
+  "machines": [
+    {
+      "name": "node01",
+      "image": "ubuntu:24.04",
+      "network": "default",
+      "ip": "172.30.0.2"
+    }
+  ],
+  "tasks": [
+    {
+      "name": "greet",
+      "type": "exec",
+      "machine": "node01",
+      "run": "echo hello",
+      "exitCode": 0,
+      "timeout": "1m0s",
+      "attempts": 1
+    }
+  ],
+  "hash": "1eeb287204158bb5cc6ddf8eecd9052472fd15a1635ec56d160a18ee58df912f"
+}
